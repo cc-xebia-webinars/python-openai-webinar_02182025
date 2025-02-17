@@ -1,0 +1,35 @@
+{
+    "editor.detectIndentation": false,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.minimap.enabled": false,
+    "editor.rulers": [
+        79
+    ],
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "python.terminal.activateEnvironment": true,
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit",
+            "source.fixAll": "explicit"
+        }
+    },
+    "ruff.nativeServer": "on",
+    "ruff.lineLength": 79,
+    "ruff.lint.select": ["E", "F", "W", "N"],
+    "[markdown]": {
+        "editor.wordWrap": "on",
+        "editor.indentSize": 2,
+    },
+    "mypy-type-checker.severity": {
+        "error": "Error",
+        "warning": "Error",
+        "note": "Error",
+        "info": "Error"
+    },
+    "mypy-type-checker.args": [
+        "--config-file=.vscode/mypy.ini",
+    ]
+}

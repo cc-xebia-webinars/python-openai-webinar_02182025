@@ -1,0 +1,12 @@
+.DS_Store
+.mypy_cache
+__pycache__
+*.pyc
+target
+target/
+venv
+aws
+awscliv2.zip
+demos/aistylist/data
+.venv
+.env

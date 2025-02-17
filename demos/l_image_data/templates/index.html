@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Bill Post Tool</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .errors {
+            color: #ff6b6b;
+        }
+        .bill-details {
+            color: #76c7c0;
+            padding: 2px;
+            border: #76c7c0 1px solid;
+            border-radius: 8px;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input[type="file"] {
+            display: block;
+            margin-bottom: 16px;
+        }
+        button {
+            background-color: #1e88e5;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #1565c0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Upload Bill</h1>
+
+        {% if errors %}
+            <h2>Errors</h2>
+            <ul class="errors">
+                {% for error in errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if bill_details %}
+            <h2>Bill Details</h2>
+            <pre class="bill-details">
+                {{ bill_details }}
+            </pre>
+        {% endif %}
+
+        <h2>Upload Bill Invoice/Receipt</h2>
+        <form action="/" method="post" enctype="multipart/form-data">
+            
+            <div>
+                <label for="invoice">Invoice:</label>
+                <input type="file" id="invoice" name="invoice">
+            </div>
+            
+            <div>
+                <label for="receipt">Receipt:</label>
+                <input type="file" id="receipt" name="receipt">
+            </div>
+
+            <button>Upload Bill</button>
+        </form>
+    </div>
+</body>
+</html>
